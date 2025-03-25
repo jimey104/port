@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세</title>
+</head>
+<body>
+<h1 th:text="${board.title}">제목</h1>
+
+<div>
+    <strong>작성자:</strong>
+    <span th:text="${board.name}">작성자 이름</span>
+</div>
+<div>
+    <strong>업로드 시간:</strong>
+    <span th:text="${#temporals.format(board.createdAt, 'yyyy-MM-dd HH:mm:ss')}">업로드 시간</span>
+</div>
+<div th:if="${board.updatedAt != null}">
+    <strong>업데이트 시간:</strong>
+    <span th:text="${#temporals.format(board.updatedAt, 'yyyy-MM-dd HH:mm:ss')}">업데이트 시간</span>
+</div>
+
+<hr />
+
+<div>
+    <strong>본문:</strong>
+    <div style="border: 1px solid #ddd; padding: 15px; margin-top: 10px; font-size: 1.1em;">
+        <p th:text="${board.content}">게시글 내용</p>
+    </div>
+</div>
+
+<div style="margin-top: 20px;">
+    <a href="/board" style="text-decoration: none; color: blue;">목록으로 돌아가기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+<head>
+    <title>포털 홈</title>
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .module-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .module-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: #0d6efd;
+        }
+        
+        .feature-icon i {
+            font-size: 2.5rem;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold mb-4">혁신적인 포털 솔루션</h1>
+                <p class="lead mb-5">최신 기술과 직관적인 인터페이스로 당신의 비즈니스를 성장시키세요</p>
+                <a href="#modules" class="btn btn-primary btn-lg px-5 py-3">시작하기</a>
+            </div>
+        </div>
+
+        <!-- Modules Section -->
+        <section id="modules" class="py-5">
+            <div class="container">
+                <h2 class="text-center section-title">주요 서비스</h2>
+                <div class="row g-4">
+                    <!-- Module Card Start-->
+                    <!-- Module 1 Card -->
+                    <div class="col-md-6">
+                        <div class="module-card card h-100">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                 class="card-img-top" alt="모듈 1">
+                            <div class="card-body">
+                                <h3 class="card-title">비즈니스 관리 시스템</h3>
+                                <p class="card-text">효율적인 업무 프로세스와 데이터 관리를 위한 통합 솔루션을 제공합니다.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>실시간 데이터 분석</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>자동화된 보고서 생성</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>커스터마이징 가능한 대시보드</li>
+                                </ul>
+                                <a href="http://localhost:8081/module1" class="btn btn-primary">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 Card -->
+                    <div class="col-md-6">
+                        <div class="module-card card h-100">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                 class="card-img-top" alt="모듈 2">
+                            <div class="card-body">
+                                <h3 class="card-title">고객 관리 플랫폼</h3>
+                                <p class="card-text">고객과의 관계를 강화하고 서비스 품질을 향상시키는 솔루션입니다.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>고객 데이터 통합 관리</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>맞춤형 마케팅 도구</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>성과 분석 리포트</li>
+                                </ul>
+                                <a href="http://localhost:8082/module2" class="btn btn-primary">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 Card -->
+                    <div class="col-md-6">
+                        <div class="module-card card h-100">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                 class="card-img-top" alt="모듈 3">
+                            <div class="card-body">
+                                <h3 class="card-title">고객 관리 플랫폼</h3>
+                                <p class="card-text">고객과의 관계를 강화하고 서비스 품질을 향상시키는 솔루션입니다.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>고객 데이터 통합 관리</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>맞춤형 마케팅 도구</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>성과 분석 리포트</li>
+                                </ul>
+                                <a href="http://localhost:8083/board" class="btn btn-primary">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module Card Enb-->
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center section-title">핵심 특징</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-gear-fill"></i>
+                            </div>
+                            <h4>손쉬운 통합</h4>
+                            <p class="text-muted">모든 비즈니스 도구를 하나의 플랫폼에서 관리하세요.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h4>안전한 보안</h4>
+                            <p class="text-muted">최신 보안 기술로 데이터를 안전하게 보호합니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <h4>성과 분석</h4>
+                            <p class="text-muted">실시간 데이터로 비즈니스 성과를 분석하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center section-title">문의하기</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <p class="lead mb-5">더 자세한 정보가 필요하신가요? 언제든 문의해주세요.</p>
+                        <a href="#" class="btn btn-primary btn-lg px-5">상담 신청</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
